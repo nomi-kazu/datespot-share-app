@@ -3,6 +3,8 @@
 - @posts.each do |post|
   %div 
     = post.title 
+  - if post.images&.attached?
+    = image_tag post.images.first 
   %div 
     = post.prefecture
   %div 
@@ -11,6 +13,9 @@
     = post.content  
   %div 
     = post.url 
+  = link_to '詳細', post_path(id: post.id)
 
-
-= link_to '新規投稿', new_post_path 
+%div
+  = link_to '新規投稿', new_post_path 
+%div
+  = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete', confirm: 'ログアウトしますか？' }
