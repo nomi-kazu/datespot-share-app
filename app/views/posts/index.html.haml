@@ -1,10 +1,4 @@
 .container 
-  .container_left 
-    %h4 新着投稿一覧
-
-    - @posts.each do |post|
-      = render 'commons/post', post: post
-
   .container_right 
     .new_post_link 
       = link_to '新規投稿', new_post_path , class: 'new_post_link_text'
@@ -27,4 +21,11 @@
       = link_to '登録内容変更', edit_user_registration_path 
     %div 
       = link_to 'プロフィールへ', profile_path 
+
+  .container_left 
+    %h4 新着投稿一覧
+
+    - @posts.each do |post|
+      = render 'commons/post', post: post
+
     
