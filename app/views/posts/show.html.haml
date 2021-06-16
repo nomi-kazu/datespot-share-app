@@ -14,21 +14,23 @@
       - @post.images.each do |image|
         = image_tag image, class: 'show_image'
   .post_show_place 
-    %p 【場所】
+    %p.post_place_description 場所
     = @post.prefecture
+    %br
     = @post.area
   .post_content 
-    %p 【説明】
+    %p.post_content_description 説明
     = @post.content
   .post_url
-    %p 【URLとか】
+    %p.post_url_description URLとか
     = @post.url 
 
-%p 【Comment】
-- @comments.each do |comment|
-  %p= comment.content 
-  = link_to '削除', post_comment_path(post_id: @post.id, id: comment), data: { method: 'delete', confirm: 'コメントを削除してよろしいでしょうか？'}
-%div
-  = link_to 'コメントする', new_post_comment_path(@post.id)
+%p.comment_index Comment
+.comments-container 
+.comment_post_form 
+  = text_area_tag :comment_content, '', class: 'form comment_area'
+  %div 
+    .btn.add_comment_btn.submit_btn
+      コメント 
 
 = javascript_pack_tag 'post_show'
