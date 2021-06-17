@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    tag_lists = params[:post][:tag_name].split(',')
+    tag_lists = params[:post][:tag_name].gsub(/[[:space:]]/, '').split(',')
     if @post.save
       @post.save_posts(tag_lists)
       redirect_to posts_path, notice: '投稿できました'
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    tag_list = params[:post][:tag_name].split(',')
+    tag_list = params[:post][:tag_name].gsub(/[[:space:]]/, '').split(',')
     if @post.update(post_params)
       @post.save_posts(tag_list)
       redirect_to posts_path, notice: '更新できました'

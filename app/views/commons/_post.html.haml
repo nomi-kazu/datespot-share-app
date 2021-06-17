@@ -7,6 +7,7 @@
       = post.title 
     %div{:id => "likes_buttons_#{post.id}"}
       = render partial: 'likes/like', locals: {post: post}
+    .clear
     .post_prefecture 
       = post.prefecture
     .post_area 
