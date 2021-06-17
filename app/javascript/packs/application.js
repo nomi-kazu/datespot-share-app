@@ -21,3 +21,14 @@ import axios from 'axios'
 import { csrfToken } from 'rails-ujs'
 
 axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
+
+(function () {
+  document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('dropdown_btn');
+    if(btn) {
+      btn.addEventListener('click', function() {
+        this.classList.toggle('is-open');
+      });
+    }
+  });
+}());
