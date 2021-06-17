@@ -20,14 +20,11 @@
  @import 'profile';
  @import 'posts';
  @import 'tags';
+ @import 'paginate';
  @import 'bootstrap';
 
  html, body {
    text-decoration: none;
- }
-
- .main_container {
-   
  }
 
  .clear::after {
