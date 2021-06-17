@@ -11,8 +11,8 @@
     %header
       %div.header_container.clear
         .header_left 
-          .header_title
-            %p DateShare
+          .header_title.title
+            = link_to 'DateShare', root_path
         .header_right
           .header_user_icon 
             - if user_signed_in?
