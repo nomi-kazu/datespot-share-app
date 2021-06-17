@@ -18,6 +18,8 @@
  @import 'footer';
  @import 'devise';
  @import 'profile';
+ @import 'posts';
+ @import 'tags';
  @import 'bootstrap';
 
  html, body {
@@ -25,6 +27,7 @@
  }
 
  .main_container {
+   
  }
 
  .clear::after {

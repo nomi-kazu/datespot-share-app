@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index]
   resources :populars, only: [:index]
   resources :search, only: [:index]
+  resources :tags, only: [:index]
   resource :profile, only: [:show, :update]
 end
