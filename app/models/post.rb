@@ -36,5 +36,9 @@ class Post < ApplicationRecord
       post_tag = Tag.find_or_create_by(tag_name: new_name)
       self.tags << post_tag 
     end
+
+    def thumbnail
+      return self.images.first.variant(resize: '150×100')
+    end
   end
 end

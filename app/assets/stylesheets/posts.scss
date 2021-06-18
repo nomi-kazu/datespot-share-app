@@ -15,6 +15,12 @@
   padding-left: 25px;
 }
 
+.thumbnail {
+  max-width: 100%;
+  max-height: 90%;
+  border-radius: 3px;
+}
+
 .area_wrap {
   margin-bottom: 30px;
 }
@@ -101,8 +107,6 @@
 }
 
 .show_image {
-  width: 80%;
-  height: 300px;
   border-radius: 5px;
   margin: 20px 0;
 }
