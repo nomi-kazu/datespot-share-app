@@ -20,21 +20,22 @@
 
             %div.header_user_icon.dropdown
               - if user_signed_in?
-                - if current_user.profile&.avatar&.attached?
-                  = image_tag current_user.profile.avatar, class: 'dropdown_btn', id: 'dropdown_btn'
-                  .dropdown_menu
-                    %ul.dropdown_list
-                      %li.dropdown_item
-                        = link_to 'プロフィール', profile_path, data: {'turbolinks' => false}
-                      %li.dropdown_item
-                        = link_to 'いいねした投稿', favorites_path, data: {'turbolinks' => false}
-                      %li.dropdown_item
-                        = link_to '登録内容変更', edit_user_registration_path
-                      %li.dropdown_item
-                        - if user_signed_in?
-                          = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete', confirm: 'ログアウトしますか？' }
-                        - else
-                          = link_to 'ログイン', new_user_session_path  
+                = image_tag current_user.profile.avatar, class: 'dropdown_btn', id: 'dropdown_btn'
+                .dropdown_menu
+                  %ul.dropdown_list
+                    %li.dropdown_item
+                      = link_to 'プロフィール', profile_path, data: {'turbolinks' => false}
+                    %li.dropdown_item
+                      = link_to 'いいねした投稿', favorites_path, data: {'turbolinks' => false}
+                    %li.dropdown_item
+                      = link_to '登録内容変更', edit_user_registration_path
+                    %li.dropdown_item
+                      - if user_signed_in?
+                        = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete', confirm: 'ログアウトしますか？' }
+                      - else
+                        = link_to 'ログイン', new_user_session_path
+              - else
+                = image_tag 'avatar.png' 
 
     .main_container  
       = yield

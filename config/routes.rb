@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   resources :search, only: [:index]
   resources :tags, only: [:index]
   resources :prefectures, only: [:index]
+  resources :accounts, only: [:show]
   resource :profile, only: [:show, :update]
 end
