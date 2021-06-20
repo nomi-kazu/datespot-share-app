@@ -12,6 +12,10 @@ class User < ApplicationRecord
   
   has_one :profile
 
+  validates :username, presence: true
+  validates :email, presence: true
+  validates :password, presence: true
+
   def prepare_profile
     profile || build_profile
   end
