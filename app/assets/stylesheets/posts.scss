@@ -1,5 +1,6 @@
 .container {
   width: 99%;
+  margin-top: 30px;
 }
 
 .container_left {
@@ -15,10 +16,8 @@
   padding-left: 25px;
 }
 
-.thumbnail {
-  max-width: 100%;
-  max-height: 90%;
-  border-radius: 3px;
+.response_top_page {
+  display: none;
 }
 
 .area_wrap {
@@ -58,10 +57,10 @@
     width: 30%;
     float: left;
 
-    .image {
-      width: 100%;
-      height: 100%;
-      border-radius: 5px;
+    .thumbnail {
+      max-width: 100%;
+      max-height: 90%;
+      border-radius: 3px;
     }
   }
 
@@ -112,8 +111,9 @@
 }
 
 .post_show_container {
-  width: 50%;
+  width: 65%;
   margin-left: 50px;
+  float: left;
 }
 
 .post_show_title {
@@ -123,17 +123,18 @@
   float: left;
 }
 
-.post_show_heart img {
-  width: 30px;
-  height: 30px;
-  float: right;
-  margin-top: 5px;
+.show_heart img {
+  margin-right: 60px;
 }
 
-.link_container a {
-  color: lightgray;
-  float: right;
-  margin-top: 5px;
+.link_container {
+  margin-right: 60px;
+
+  a {
+    color: lightgray;
+    float: right;
+    margin-top: 5px;
+  }
 }
 
 .post_place_description {
@@ -197,4 +198,79 @@
 .comment_delete {
   color: lightgray;
   float: right;
+}
+
+@media only screen and (max-width:767px) {
+  
+  .content_left {
+    width: 100%;
+  }
+
+  .content_right {
+    display: none;
+  }
+
+  .post_container_left {
+    width: 100%!important;
+
+    img {
+      width: 90%;
+      border-radius: 20px!important;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  .post_container_right {
+    margin-top: 10px;
+    width: 95%!important;
+  }
+
+  .post_container_right {
+    margin-top: 10px;
+    width: 95%!important;
+  }
+
+  .response_top_page {
+    display: block;
+  }
+
+  .response_search {
+    display: block;
+    height: 230px;
+
+    .response_search_form {
+      padding-top: 45px;
+      display: block;
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+
+  .response_area_search {
+    width: 70%;
+    margin-top: 30px!important;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .tag_wrap {
+    margin-top: 10px;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .post_show_container {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .show_heart img {
+    margin-right: 0px;
+  }
+
+  .link_container {
+    margin-right: 0px;
+  }
 }

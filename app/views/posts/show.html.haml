@@ -1,13 +1,14 @@
-.post_show_container#post-show{data: {post_id: @post.id}}
-  .post_show_title 
-    = @post.title 
-  %div{:id => "likes_buttons_#{@post.id}"}
-    = render partial: 'likes/like', locals: {post: @post}
+.container 
+  .post_show_container#post-show{data: {post_id: @post.id}}
+    .post_show_title 
+      = @post.title 
+    %div{:id => "likes_buttons_#{@post.id}"}
+      = render partial: 'likes/like', locals: {post: @post}
   
-  .clear
-  .link_container 
-    = link_to '削除', post_path(@post), data: { method: 'delete', confirm: '本当に削除してよろしいですか？'}
-    = link_to '編集/', edit_post_path(@post)
+    .link_container.clear
+      = link_to '削除', post_path(@post), data: { method: 'delete', confirm: '本当に削除してよろしいですか？'}
+      = link_to '編集/', edit_post_path(@post)
+    .clear 
     - if @post.images&.attached?
       - if @post.images.size == 3
         .wrapper
@@ -43,23 +44,23 @@
                 =image_tag @post.images.second, width: '150', alt: "画像1", class: "thumbs__lists__item__image"
       - else 
         = image_tag @post.images.first.variant(gravity: :center, resize:"500x300^", crop:"500x300+0+0").processed, class: 'show_image image_size_1'
-  .post_show_place 
-    %p.post_place_description 場所
-    = @post.prefecture
-    %br
-    = @post.area
-  .post_content 
-    %p.post_content_description 説明
-    = @post.content
-  .post_tag 
-    %p.post_tag_description タグ
-    = @tag_list
-  .post_url
-    %p.post_url_description URL
-    = link_to @post.url, @post.url
-  %div 
-    %p.comment_index コメント
-    #comments_area
-      = render partial: 'comments/index', locals: { comments: @comments }
-    - if user_signed_in?
-      = render partial: 'comments/form', locals: { comment: @comment, post: @post }
+    .post_show_place 
+      %p.post_place_description 場所
+      = @post.prefecture
+      %br
+      = @post.area
+    .post_content 
+      %p.post_content_description 説明
+      = @post.content
+    .post_tag 
+      %p.post_tag_description タグ
+      = @tag_list
+    .post_url
+      %p.post_url_description URL
+      = link_to @post.url, @post.url
+    %div 
+      %p.comment_index コメント
+      #comments_area
+        = render partial: 'comments/index', locals: { comments: @comments }
+      - if user_signed_in?
+        = render partial: 'comments/form', locals: { comment: @comment, post: @post }

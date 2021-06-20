@@ -31,7 +31,7 @@ import { csrfToken } from 'rails-ujs'
 axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 
 $(function () {
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('turbolinks:load', function() {
     const btn = document.getElementById('dropdown_btn');
     if(btn) {
       btn.addEventListener('click', function() {
