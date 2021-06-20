@@ -1,6 +1,6 @@
 .container 
   %ul
-    - model.errors.full_messages.each do |message|
+    - @post.errors.full_messages.each do |message|
       %li= message
   = form_with(model: [@tag, @post], local: true) do |f|
     %div
