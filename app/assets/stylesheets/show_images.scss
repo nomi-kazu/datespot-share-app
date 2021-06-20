@@ -15,6 +15,7 @@
 
   .thumbs {
     height: 120px;
+    margin-left: 14px;
 
     &__lists {
       height: 95%;
@@ -42,6 +43,9 @@
   margin-top: 5px;
   background-color: white;
   max-width: 95%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .image_size_1 {
