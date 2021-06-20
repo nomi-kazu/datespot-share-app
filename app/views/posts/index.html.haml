@@ -19,7 +19,7 @@
   .container_right 
     = render 'commons/content_right'
   .container_left 
-    %p.font-weight-bold 投稿一覧
+    %p.font-weight-bold.response_post_index_title 投稿一覧
     - @posts.each do |post|
       = render 'commons/post', post: post
     = paginate @posts

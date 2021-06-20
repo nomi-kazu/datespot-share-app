@@ -3,6 +3,8 @@ class FavoritesController < ApplicationController
 
   def index
     @posts = current_user.favorite_posts
-    @tag_lists = Tag.all.limit(3)
+    @tag_lists = Tag.all.limit(15)
+    
+    @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(5)
   end
 end

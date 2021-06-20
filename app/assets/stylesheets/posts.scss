@@ -3,12 +3,12 @@
   margin-top: 30px;
 }
 
-.container_left {
+.content_left {
   width: 70%;
   float: left;
 }
 
-.container_right {
+.content_right {
   width: 27%;
   float: left;
   height: 1000px;
@@ -24,11 +24,11 @@
   margin-bottom: 30px;
 }
 
-.post_tag_descriprition {
-  font-size: 20px;
-  border-bottom: 1px solid lightgray;
-  margin-top: 20px;
-}
+// .post_tag_descriprition {
+//   font-size: 20px;
+//   border-bottom: 1px solid lightgray;
+//   margin-top: 20px;
+// }
 
 .area_container {
   display: flex;
@@ -47,6 +47,22 @@
     font-size: 12px;
   }
 }
+
+// .link_to_popular {
+
+//   a {
+//     border: 2px solid #000;
+//     border-radius: 0;
+//     padding: 10px;
+//     background: #fff;
+//     color: black;
+//   }
+
+//   a:hover {
+//     color: #fff;
+//     background: #eb5e6b;
+//   }
+// }
 
 .post_container {
   margin-top: 30px;
@@ -71,7 +87,7 @@
     .post_title {
       font-size: 20px;
       font-weight: bold;
-      margin-bottom: 3px;
+      margin-bottom: 15px;
       float: left;
     }
 
@@ -106,7 +122,7 @@
   .post_username {
     margin-left: 40px;
     padding-top: 3px;
-    color:black;
+    color: black;
   }
 }
 
@@ -143,6 +159,12 @@
 }
 
 .post_content_description {
+  font-size: 20px;
+  border-bottom: 1px solid lightgray;
+  margin-top: 20px;
+}
+
+.post_tag_description {
   font-size: 20px;
   border-bottom: 1px solid lightgray;
   margin-top: 20px;
@@ -210,6 +232,10 @@
     display: none;
   }
 
+  .response_post_index_title {
+    margin-left: 25px;
+  }
+
   .post_container_left {
     width: 100%!important;
 
@@ -229,6 +255,10 @@
   .post_container_right {
     margin-top: 10px;
     width: 95%!important;
+
+    .post_title {
+      width: 80%;
+    }
   }
 
   .response_top_page {
@@ -242,13 +272,13 @@
     .response_search_form {
       padding-top: 45px;
       display: block;
-      width: 70%;
+      width: 80%;
       margin: 0 auto;
     }
   }
 
   .response_area_search {
-    width: 70%;
+    width: 80%;
     margin-top: 30px!important;
     display: block;
     margin: 0 auto;
