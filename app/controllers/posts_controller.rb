@@ -4,9 +4,9 @@ class PostsController < ApplicationController
   def index
     if params[:tag_id].present?
       @tag = Tag.find(params[:tag_id])
-      @posts = @tag.posts
+      @posts = @tag.posts.order(created_at: :desc)
     else
-      @posts = Post.all
+      @posts = Post.all.order(created_at: :desc)
     end
 
     @tag_lists = Tag.all.limit(15)
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
-    @comments = @post.comments
+    @comments = @post.comments.order(created_at: :desc)
     
     @tag_lists = @post.tags.pluck(:tag_name).join(',')
   end
