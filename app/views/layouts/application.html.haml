@@ -13,7 +13,13 @@
     %header
       = render 'commons/header'
 
-    %div.main_container  
+    %div.main_container
+      - if flash[:notice]
+        .flash_message
+          %p.notice= notice
+      - if flash[:alert]
+        .flash_message
+          %p.alert= alert 
       = yield
     
     .clear
