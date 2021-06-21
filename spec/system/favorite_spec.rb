@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Favorite', type: :system do
   let!(:user) { create(:user) }
-  let!(:post) { create_list(:post, 3, user: user) }
+  let!(:posts) { create_list(:post, 3, user: user) }
 
   describe 'ログインしている場合' do
     before do
