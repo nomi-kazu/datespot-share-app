@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     resource :like, only: [:show, :create, :destroy]
   end
 
+  resources :questions, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
+    resources :answers, only: [:index, :create, :destroy]
+  end
+
   resources :favorites, only: [:index]
   resources :populars, only: [:index]
   resources :search, only: [:index]
