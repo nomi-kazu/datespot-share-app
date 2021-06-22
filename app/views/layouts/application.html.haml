@@ -10,18 +10,19 @@
     %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0", :name => "viewport"}/
     
   %body
-    %header
-      = render 'commons/header'
+    %div.wrapper
+      %header
+        = render 'commons/header'
 
-    %div.main_container
-      - if flash[:notice]
-        .flash_message
-          %p.notice= notice
-      - if flash[:alert]
-        .flash_message
-          %p.alert= alert 
-      = yield
-    
-    .clear
-    %footer 
-      %p DateShare
+      %div.main_container
+        - if flash[:notice]
+          .flash_message
+            %p.notice= notice
+        - if flash[:alert]
+          .flash_message
+            %p.alert= alert 
+        = yield
+      
+      .clear
+      %footer 
+        %p DateShare
