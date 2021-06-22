@@ -26,15 +26,23 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-
+    @question = Question.find(params[:id])
   end
 
   def update
-
+    @question = Question.find(params[:id])
+    if @question.update(question_params)
+      redirect_to questions_path, notice: '更新できました'
+    else
+      flash.now[:error] = '更新できませんでした'
+      render :edit
+    end
   end
 
   def destroy
-
+    @question = Question.find(params[:id])
+    @question.destroy!
+    redirect_to questions_path, notice: '削除しました'
   end
 
   private
