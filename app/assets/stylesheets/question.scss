@@ -5,8 +5,8 @@
 
 .question_index_title {
   margin-top: 20px;
-  font-size: 25px;
-  letter-spacing: 3px;
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 
 .questions {
@@ -17,13 +17,14 @@
   padding: 10px;
 
   .question_title {
-    font-size: 20px;
+    font-size: 18px;
     color: black;
     font-weight: bold;
   }
   
   .question_content {
     color: black;
+    font-size: 15px;
   }
 }
 
