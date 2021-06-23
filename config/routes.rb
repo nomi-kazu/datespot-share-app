@@ -14,11 +14,17 @@ Rails.application.routes.draw do
     resources :answers, only: [:index, :create, :destroy]
   end
 
+  resources :accounts, only: [:show] do
+    resources :follows, only: [:create]
+    resources :unfollows, only: [:create]
+    resources :followings, only: [:index]
+    resources :follwers, only: [:index]
+  end
+
   resources :favorites, only: [:index]
   resources :populars, only: [:index]
   resources :search, only: [:index]
   resources :tags, only: [:index]
   resources :prefectures, only: [:index]
-  resources :accounts, only: [:show]
   resource :profile, only: [:show, :update]
 end
