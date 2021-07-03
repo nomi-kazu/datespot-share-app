@@ -224,7 +224,16 @@
   float: right;
 }
 
+@media only screen and (max-width:1024px) {
+  .post_show_container {
+    width: 800%;
+  }
+}
+
 @media only screen and (max-width:767px) {
+  .post_show_container {
+    width: 100%;
+  }
   
   .content_left {
     width: 100%;
