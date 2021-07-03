@@ -5,7 +5,7 @@
     .profile_avatar
       = image_tag @user.avatar_image, class: 'profile_avatar'
     = render 'relationships/follow_form', user: @user
-  .account_show_right 
+  .account_show_right.account 
     .followers 
       = link_to account_follwers_path(@user) do 
         %p.follow_count= @user.follower_count
