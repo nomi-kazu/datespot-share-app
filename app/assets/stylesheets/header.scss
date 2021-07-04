@@ -16,6 +16,7 @@ header {
 
   .title {
     width: 200px;
+    font-size: 40px;
   }
 }
 
@@ -53,12 +54,15 @@ header {
   border-radius: 99px;
   float: right;
   margin-top: -48px;
+  padding: 3px;
+  background-color: white;
 }
 
 @media only screen and (max-width:767px) {
   
   .title {
-    width: 100px!important;
+    width: 130px!important;
+    font-size: 25px;
   }
 
   .new_post_link {
