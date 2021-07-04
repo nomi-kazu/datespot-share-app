@@ -22,6 +22,15 @@
   }
 }
 
+.msg_btn {
+  margin-top: 10px;
+  width: 200px;
+
+  a {
+    color: #fff!important;
+  }
+}
+
 .avatar_form {
   position: absolute;
   top: 500;
@@ -98,5 +107,16 @@
     width: 200px;
     margin-top: 40px;
     margin-left: 130px;
+  }
+
+  .follow_btn {
+    width: 49%!important;
+    float: left;
+  }
+
+  .msg_btn {
+    width: 49%!important;
+    float: right;
+    margin-top: 20px;
   }
 }
