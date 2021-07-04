@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import '_variables';
 
 .container {
   width: 99%;
@@ -50,23 +50,29 @@
   }
 }
 
-.link_to_popular {
+.content_right_link {
   border: 2px solid #000;
-  padding: 7px;
   background: #fff;
+  padding: 10px;
 
-  a {
+  p {
     font-size: 13px;
     color: black;
+    margin: auto;
   }
 
   &:hover {
-    background: #eb5e6b;
+    background: $sub-color;
 
-    a {
+    p {
       color: #fff;
     }
   }
+}
+
+.post_page_title {
+  margin-top: 15px;
+  font-weight: bold;
 }
 
 .post_container {
@@ -88,6 +94,7 @@
   .post_container_right {
     width: 65%;
     float: right;
+    color: black;
 
     .post_title {
       font-size: 20px;
@@ -96,16 +103,27 @@
       float: left;
     }
 
-    .link_detail {
-      color: lightslategray;
+    .post_content_index {
+      margin-bottom: 10px;
     }
   }
 }
 
-.box_read {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.user_info {
+  text-decoration: none;
+
+  .post_user_avatar {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    float: left;
+  }
+
+  .post_username {
+    margin-left: 40px;
+    padding-top: 3px;
+    color: black;
+  }
 }
 
 .post_heart img {
@@ -216,7 +234,7 @@
 }
 
 .comment_container {
-  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 .comment-username {
@@ -224,7 +242,7 @@
 }
 
 .comment_content {
-  margin-top: 5px;
+  margin-top: -10px;
   float: left;
 }
 

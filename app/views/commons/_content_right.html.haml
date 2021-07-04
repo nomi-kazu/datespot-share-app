@@ -18,14 +18,19 @@
   %div
     = link_to 'タグ一覧へ', tags_path 
 
-.content_right_link
-  = link_to '人気投稿を見る', populars_path, data: {'turbolinks' => false}
-.content_right_link.mt-2
-  = link_to '質問部屋へ行く', questions_path, data: {'turbolinks' => false}
+= link_to populars_path, data: {'turbolinks' => false} do
+  .content_right_link
+    %p 人気投稿を見る
+= link_to questions_path, data: {'turbolinks' => false} do
+  .content_right_link.mt-2
+    %p 質問部屋へ行く
+
 - if user_signed_in?
   - if current_page?(controller: 'timelines')
-    .content_right_link.mt-2.timeline_link
-      = link_to 'すべての投稿一覧', root_path, data: {'turbolinks' => false}
+    = link_to root_path, data: {'turbolinks' => false} do
+      .content_right_link.mt-2
+        %p すべての投稿一覧
   - else 
-    .content_right_link.mt-2.timeline_link
-      = link_to 'フォローしているユーザーの投稿', timelines_path, data: {'turbolinks' => false}
+    = link_to timelines_path, data: {'turbolinks' => false} do
+      .content_right_link.mt-2
+        %p フォローしているユーザーの投稿
