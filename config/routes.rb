@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :answers, only: [:index, :create, :destroy]
   end
 
-  resources :accounts, only: [:show] do
+  resources :accounts, only: [:index, :show] do
     resources :follows, only: [:create]
     resources :unfollows, only: [:create]
     resources :followings, only: [:index]
@@ -29,5 +29,7 @@ Rails.application.routes.draw do
   resources :tags,        only: [:index]
   resources :prefectures, only: [:index]
   resources :timelines,   only: [:index]
-  resource :profile,      only: [:show, :update]
+  resources :messages,    only: [:create]
+  resources :rooms,       only: [:create, :show, :index]
+  resource  :profile,     only: [:show, :update]
 end
