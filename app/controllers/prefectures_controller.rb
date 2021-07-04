@@ -5,6 +5,6 @@ class PrefecturesController < ApplicationController
 
     @tag_lists = Tag.all.limit(15)
 
-    @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(5)
+    @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(10)
   end
 end
