@@ -8,13 +8,25 @@
       = render 'relationships/follow_form', user: @user
   .account_show_right.account 
     .followers 
-      = link_to account_follwers_path(@user) do
+      = link_to account_followers_path(@user) do
         %p.follow_count= @user.follower_count
         %p.follwer_btn 'フォロワー'
     .followings 
       = link_to account_followings_path(@user) do
         %p.follow_count= @user.following_count
         %p.follwer_btn 'フォロー'
+
+  .direct_message_btn
+    - if user_signed_in?
+      - unless @user.id == current_user.id 
+        .msg_btn
+          - if @isRoom == true
+            = link_to 'ダイレクトメッセージ', room_path(@roomId), class: 'btn submit_btn'
+          - else 
+            = form_for @room do |f|
+              = fields_for @entry do |e|
+                = e.hidden_field :user_id, value: @user.id
+              = f.submit 'ダイレクトメッセージ', class: 'btn submit_btn'
 
   .clear 
   .profile_post_container 
