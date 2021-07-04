@@ -1,3 +1,5 @@
+@import '_variables';
+
 .dropdown {
   position: relative;
 
@@ -24,6 +26,20 @@
       a {
         color: black;
       }
+    }
+  }
+
+  .notice_circle {
+    font-size: 5px;
+    color: $sub-color;
+    position: absolute;
+    position: relative;
+    top: 3px;
+    right: 16px;  
+    z-index: 16;
+
+    .fa-stack {
+      position: relative;
     }
   }
   

@@ -5,9 +5,9 @@ class Post < ApplicationRecord
 
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-
   has_many :tagmaps, dependent: :destroy
   has_many :tags, through: :tagmaps
+  has_many :notifications, dependent: :destroy
 
   belongs_to :user
 
@@ -26,19 +26,48 @@ class Post < ApplicationRecord
     old_tags = current_tags - tags 
     new_tags = tags - current_tags
 
-    #destroy
     old_tags.each do |old_name|
       self.tags.delete Tag.find_by(tag_name: old_name)
     end
 
-    #create
     new_tags.each do |new_name|
       post_tag = Tag.find_or_create_by(tag_name: new_name)
       self.tags << post_tag 
     end
-
-    def thumbnail
-      return self.images.first.variant(resize: '150×100')
-    end
   end
+
+  def thumbnail
+    return self.images.first.variant(resize: '150×100')
+  end
+
+  def create_notification_by(current_user)
+    notification = current_user.active_notifications.new(
+      post_id: id,
+      visited_id: user_id,
+      action: 'like'
+    )
+    notification.save if notification.valid?
+  end
+
+  def create_notification_comment!(current_user, comment_id)
+    temp_ids = Comment.select(:user_id).where(post_id: id).where.not(user_id: current_user.id).distinct
+    temp_ids.each do |temp_id|
+      save_notification_comment!(current_user, comment_id, temp_id['user_id'])
+    end
+    save_notification_comment!(current_user, comment_id, user_id) if temp_ids.blank?
+  end
+
+  def save_notification_comment!(current_user, comment_id, visited_id)
+    notification = current_user.active_notifications.new(
+      post_id: id,
+      comment_id: comment_id,
+      visited_id: visited_id,
+      action: 'comment'
+    )
+    if notification.visitor_id == notification.visited_id
+      notification.checked = true
+    end
+    notification.save if notification.valid?
+  end
+
 end

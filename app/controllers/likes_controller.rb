@@ -9,7 +9,13 @@ class LikesController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     like = current_user.likes.build(post_id: params[:post_id])
-    like.save 
+    like.save
+
+    @post.create_notification_by(current_user)
+    respond_to do |format|
+      format.html { redirect_to request.referrer}
+      format.js
+    end
   end
 
   def destroy
