@@ -35,7 +35,7 @@ RSpec.describe 'Post', type: :system do
       select '東京都', from: '都道府県'
       click_on '登録'
       expect(page). to have_css('.post_index_title', text: '投稿一覧')
-      expect(page). to have_content '投稿できました'
+      expect(page). to have_content '投稿できました!'
     end
 
     it '画像以外すべての項目を入力し、投稿を保存できる' do
@@ -48,7 +48,7 @@ RSpec.describe 'Post', type: :system do
       fill_in 'post[tag_name]', with: 'Faker::Lorem.characters(number: 10)'
       click_on '登録'
       expect(page). to have_css('.post_index_title', text: '投稿一覧')
-      expect(page). to have_content '投稿できました'
+      expect(page). to have_content '投稿できました!'
     end
   end
 end
