@@ -12,6 +12,15 @@
   cursor: pointer;
 }
 
+.follow_btn {
+  color: white;
+  margin-top: 20px;
+
+  a {
+    color: white;
+  }
+}
+
 .avatar_form {
   position: absolute;
   top: 500;
@@ -27,15 +36,6 @@
 .profile_post_container {
   width: 60%;
   margin-top: 50px;
-}
-
-.follow_btn {
-  color: white;
-  margin-top: 20px;
-
-  a {
-    color: white;
-  }
 }
 
 .account_show_left {

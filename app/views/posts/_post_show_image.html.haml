@@ -33,3 +33,5 @@
             = image_tag @post.images.second, alt: "画像1", class: "thumbs__lists__item__image"
   - else 
     = image_tag @post.images.first.variant(gravity: :center, resize:"500x300^", crop:"500x300+0+0").processed, class: 'show_image image_size_1'
+
+= javascript_pack_tag 'post_image'
