@@ -8,11 +8,11 @@
       = render 'relationships/follow_form', user: @user
   .account_show_right.account 
     .followers 
-      = link_to account_follwers_path(@user) do 
+      = link_to account_follwers_path(@user) do
         %p.follow_count= @user.follower_count
         %p.follwer_btn 'フォロワー'
     .followings 
-      = link_to account_followings_path(@user) do 
+      = link_to account_followings_path(@user) do
         %p.follow_count= @user.following_count
         %p.follwer_btn 'フォロー'
 
