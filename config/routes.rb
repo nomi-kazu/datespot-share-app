@@ -23,13 +23,14 @@ Rails.application.routes.draw do
     resources :followers, only: [:index]
   end
 
-  resources :favorites,   only: [:index]
-  resources :populars,    only: [:index]
-  resources :search,      only: [:index]
-  resources :tags,        only: [:index]
-  resources :prefectures, only: [:index]
-  resources :timelines,   only: [:index]
-  resources :messages,    only: [:create]
-  resources :rooms,       only: [:create, :show, :index]
-  resource  :profile,     only: [:show, :update]
+  resources :favorites,     only: [:index]
+  resources :populars,      only: [:index]
+  resources :search,        only: [:index]
+  resources :tags,          only: [:index]
+  resources :prefectures,   only: [:index]
+  resources :timelines,     only: [:index]
+  resources :messages,      only: [:create]
+  resources :rooms,         only: [:create, :show, :index]
+  resource  :profile,       only: [:show, :update]
+  resources :notifications, only: [:index]
 end

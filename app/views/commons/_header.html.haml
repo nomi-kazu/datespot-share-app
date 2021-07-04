@@ -31,6 +31,13 @@
             %li.dropdown_item
               = link_to 'いいねした投稿', favorites_path, data: {'turbolinks' => false}
             %li.dropdown_item
+              - if unchecked_notifications.any?
+                .fa-stack
+                  = link_to '通知', notifications_path
+                %i.fas.fa-circle.notice_circle
+              - else
+                = link_to '通知', notifications_path 
+            %li.dropdown_item
               - unless current_user.email == 'test@example.com'
                 = link_to '登録内容変更', edit_user_registration_path
             %li.dropdown_item
