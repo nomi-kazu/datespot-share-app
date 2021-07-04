@@ -24,6 +24,7 @@
  @import 'dropdown';
  @import 'show_images';
  @import 'question';
+ @import 'flash_message';
  @import 'bootstrap';
 
  html, body {
@@ -36,17 +37,6 @@
    position: relative;
    min-height: 100%;
    padding-bottom: 70px;
- }
-
- .flash_message {
-   width: 80%;
-   margin: 10px auto;
-   height: 50px;
-   position: relative;
-
-   p {
-     z-index: 99;
-   }
  }
 
  .error_msg {
