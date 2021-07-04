@@ -32,6 +32,7 @@
           %div{class: 'thumbs__lists__item' , data: {index:1}}
             = image_tag @post.images.second, alt: "画像1", class: "thumbs__lists__item__image"
   - else 
-    = image_tag @post.images.first.variant(gravity: :center).processed, class: 'show_image image_size_1'
+    .main__lists__image
+      = image_tag @post.images.first.variant(gravity: :center).processed, class: 'show_image_main', id: 'image_size_1'
 
 = javascript_pack_tag 'post_image'

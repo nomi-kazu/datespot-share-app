@@ -7,9 +7,10 @@ class LikesController < ApplicationController
   end
 
   def create
-    @post = Post.find(params[:post_id])
     like = current_user.likes.build(post_id: params[:post_id])
     like.save
+    @post = Post.find(params[:post_id])
+    @post.create_notification_blike!(current_user)
 
     @post.create_notification_by(current_user)
     respond_to do |format|
