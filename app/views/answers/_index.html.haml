@@ -1,7 +1,17 @@
 - answers.each do |answer|
   .comment_container.clear 
-    = answer.user.username 
-  .comment_content 
-    = simple_format(answer.content)
-  - if answer.user == current_user 
-    = link_to '回答を削除する', question_answer_path(answer.question_id, answer.id), data: { method: 'delete', confirm: '本当に削除してよろしいですか？' }, remote: true, class: 'comment_delete'
+    .user_info
+      - if user_signed_in?
+        - if answer.user.id == current_user.id
+          = link_to profile_path, data: { 'turbolinks' => false} do
+            = image_tag answer.user.avatar_image, class: 'post_user_avatar'
+            %p.post_user_name= answer.user.username
+        - else 
+          = render 'commons/user_info', post: answer
+      - else 
+        = render 'commons/user_info', post: answer 
+
+    .comment_content 
+      = simple_format(answer.content)
+    - if answer.user == current_user 
+      = link_to '回答を削除する', question_answer_path(answer.question_id, answer.id), data: { method: 'delete', confirm: '本当に削除してよろしいですか？' }, remote: true, class: 'comment_delete'
