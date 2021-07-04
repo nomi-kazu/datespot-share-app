@@ -2,7 +2,7 @@
   %p.room_title トークルーム
   - if @messages.present?
     - @messages.each do |message|
-      - if message.user.id == current_user_id
+      - if message.user.id == current_user.id
         .my_talk
           .my_talk_img= image_tag message.user.avatar_image, class: 'msg_avatar'
           .my_talk_content= message.content
