@@ -1,31 +1,31 @@
-@charset "UTF-8";
+@import '_variables';
 
 header {
-  background-color: #082b48;
+  background-color: $main-color;
   color: white;
-}
 
-.header_container {
-  padding: 10px 0;
-  width: 90%;
-  margin: auto;
-}
+  .header_container {
+    padding: 10px 0;
+    width: 90%;
+    margin: auto;
 
-.header_left {
-  float: left;
+    .header_left {
+      float: left;
 
-  .title {
-    width: 200px;
-    font-size: 40px;
+      .title {
+        width: 200px;
+        font-size: 40px;
+      }
+    }
+
+    .header_right {
+      float: right;
+    }
   }
 }
 
-.header_right {
-  float: right;
-}
-
 .new_post_link {
-  background-color: #eb5e6b;
+  background-color: $sub-color;
   border-radius: 5px;
   margin-right: 100px;
   margin-top: 25px;
@@ -81,7 +81,7 @@ header {
 
   .new_post_link_response {
     display: block;
-    background-color: #eb5e6b;
+    background-color: $sub-color;
     border-radius: 5px;
     height: 30px;
     width: 30px;

@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import '_variables';
 
 .pagination {
   justify-content: center;
@@ -10,13 +10,9 @@
 }
 
 .pagination>.active>a {
-  background-color: #eb5e6b!important;
+  background-color: $sub-color!important;
 }
 
 .page-item a {
   border-radius: 5px;
-}
-
-@media only screen and (max-width:767px) {
-  
 }

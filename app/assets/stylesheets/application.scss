@@ -14,17 +14,17 @@
  *= require_self
  */
 
+ @import '_variables';
  @import 'header';
  @import 'footer';
- @import 'devise';
  @import 'profile';
  @import 'posts';
  @import 'tags';
  @import 'paginate';
  @import 'dropdown';
  @import 'show_images';
- @import 'bootstrap';
  @import 'question';
+ @import 'bootstrap';
 
  html, body {
    text-decoration: none;
@@ -51,7 +51,7 @@
 
  .error_msg {
    list-style: none;
-   color: #eb5e6b;
+   color: $sub-color;
    font-size: 15px;
  }
 
@@ -62,7 +62,7 @@
  }
  
  .submit_btn {
-   background-color: #eb5e6b;
+   background-color: $sub-color;
    color: white;
  }
 
@@ -70,6 +70,18 @@
    display: none;
  }
  
+ .form {
+  width: 50%;
+  background: #F4F4F4;
+  border-radius: 10px; 
+  border: none;   
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+.large_form {
+  height: 150px;
+}
  @media only screen and (max-width:767px) {
 
    .container {

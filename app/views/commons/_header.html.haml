@@ -1,4 +1,4 @@
-%div.header_container.clear
+.header_container.clear
   .header_left 
     .header_title
       = link_to 'DateShare', root_path, class: 'title'
@@ -21,7 +21,7 @@
       .new_post_link_response 
         = link_to 'ログイン', new_user_session_path, class: 'new_post_response_text'
         
-    %div.header_user_icon.dropdown
+    .header_user_icon.dropdown
       - if user_signed_in?
         = image_tag current_user.avatar_image, class: 'dropdown_btn', id: 'dropdown_btn'
         .dropdown_menu
