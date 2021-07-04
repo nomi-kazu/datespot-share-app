@@ -1,7 +1,7 @@
 .container 
   %ul
     - @post.errors.full_messages.each do |message|
-      %li= message
+      %li.error_msg= message
   = form_with(model: [@tag, @post], local: true) do |f|
     %div
       = f.label :title, 'タイトル', class: 'new_post_title'

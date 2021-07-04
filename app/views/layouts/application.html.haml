@@ -5,6 +5,7 @@
     %title DatespotShareApp
     = csrf_meta_tags
     = csp_meta_tag
+    %script{:crossorigin => "anonymous", :src => "https://kit.fontawesome.com/ef7dc4f0ed.js"}
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0", :name => "viewport"}/
@@ -16,10 +17,10 @@
 
       %div.main_container
         - if flash[:notice]
-          .flash_message
+          .flash_message.alert.alert-info 
             %p.notice= notice
         - if flash[:alert]
-          .flash_message
+          .flash_message.alert.alert-info 
             %p.alert= alert 
         = yield
       

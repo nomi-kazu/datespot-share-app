@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     tag_lists = params[:post][:tag_name].gsub(/[[:space:]]/, '').split(',')
     if @post.save
       @post.save_posts(tag_lists)
-      redirect_to posts_path, notice: '投稿できました'
+      redirect_to posts_path, notice: '投稿できました!'
     else
       flash.now[:error] = '投稿できませんでした'
       render :new
@@ -50,7 +50,7 @@ class PostsController < ApplicationController
     tag_list = params[:post][:tag_name].gsub(/[[:space:]]/, '').split(',')
     if @post.update(post_params)
       @post.save_posts(tag_list)
-      redirect_to posts_path, notice: '更新できました'
+      redirect_to posts_path, notice: '更新できました!'
     else
       flash.now[:error] = '更新できませんでした'
       render :edit
@@ -60,7 +60,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy!
-    redirect_to posts_path, notice: '削除しました'
+    redirect_to posts_path, notice: '削除しました!'
   end
 
   private

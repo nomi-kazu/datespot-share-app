@@ -4,17 +4,16 @@
   justify-content: center;
 }
 
-.pagination>li>a {
+.pagination li a {
   border: none;
-  color: #696969;
+  color: black;
 }
 
 .pagination>.active>a {
-  border-radius: 5px;
-  background: #93c9ff;
+  background-color: #eb5e6b!important;
 }
 
-.pagination>li>a:hover {
+.page-item a {
   border-radius: 5px;
 }
 

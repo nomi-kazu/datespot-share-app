@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
   def create
     @question = current_user.questions.build(question_params)
     if @question.save
-      redirect_to questions_path, notice: '投稿できました'
+      redirect_to questions_path, notice: '投稿できました!'
     else
       flash.now[:error] = '投稿できませんでした'
       rendef :new
@@ -34,7 +34,7 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
     if @question.update(question_params)
-      redirect_to questions_path, notice: '更新できました'
+      redirect_to questions_path, notice: '更新できました!'
     else
       flash.now[:error] = '更新できませんでした'
       render :edit
@@ -44,7 +44,7 @@ class QuestionsController < ApplicationController
   def destroy
     @question = Question.find(params[:id])
     @question.destroy!
-    redirect_to questions_path, notice: '削除しました'
+    redirect_to questions_path, notice: '削除しました!'
   end
 
   private
