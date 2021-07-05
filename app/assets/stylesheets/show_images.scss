@@ -17,7 +17,7 @@
           width: 550px;
           height: 350px;
           border-radius: 5px;
-          object-fit: contain;
+          object-fit: cover;
           border: 1px solid #ccc;
         }
       }
@@ -58,8 +58,12 @@
   border-radius: 5px;
   margin-top: 10px;
   max-height: 350px;
-  object-fit: contain;
+  object-fit: cover;
   border: 1px solid #ccc;
+}
+
+.js_image {
+  object-fit: contain!important;
 }
 
 @media only screen and (max-width:1024px) {
