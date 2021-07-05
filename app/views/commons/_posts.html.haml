@@ -16,10 +16,11 @@
       .post_items
         .post_prefecture 
           = post.prefecture
-        .post_area 
+        - if post.area.present?
+          = '/' 
           = post.area 
         .post_content.box_read
-          = post.content
+          = post.content.truncate(110)
       .post_detail_link 
         = link_to '詳しく見る', post_path(id: post.id), data: {'turbolinks' => false}, class: 'link_detail'
       .user_info

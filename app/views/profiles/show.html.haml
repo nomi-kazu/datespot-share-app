@@ -14,11 +14,11 @@
     .followers 
       = link_to account_followers_path(@user) do
         %p.follow_count= @user.follower_count
-        %p.follwer_btn 'フォロワー'
+        %p.follwer_btn フォロワー
     .followings 
       = link_to account_followings_path(@user) do
         %p.follow_count= @user.following_count
-        %p.follwer_btn 'フォロー'
+        %p.follwer_btn フォロー
   .clear
   .profile_post_container 
     %p.mt-3.font-weight-bold.your_post あなたの投稿一覧

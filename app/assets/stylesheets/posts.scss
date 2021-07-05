@@ -38,15 +38,24 @@
     a {
       color: lightslategrey;
       margin-right: 20px;
-      font-size: 12px;
+      font-size: 14px;
+
+      &:hover {
+        color: rgb(75, 75, 75);
+        text-decoration: none;
+      }
     }
   }
 
   .area_more_btn {
     float: right;
-    font-size: 12px;
+    font-size: 14px;
     color: lightslategrey;
     cursor: pointer;
+
+    &:hover {
+      color: rgb(75, 75, 75);
+    }
   }
 }
 
@@ -82,7 +91,12 @@
 
   a {
     color: lightslategray;
-    font-size: 12px;
+    font-size: 14px;
+
+    &:hover {
+      color: rgb(75, 75, 75);
+      text-decoration: none;
+    }
   }
 }
 
@@ -93,10 +107,6 @@
 .post_page_title {
   margin-top: 15px;
   font-weight: bold;
-}
-
-.search_btn:hover {
-  background-color: #f27985;
 }
 
 .post_container {
@@ -304,6 +314,14 @@
 .comment_delete {
   color: lightgray;
   float: right;
+}
+
+.tag_form {
+  padding-left: 10px;
+}
+
+.post_btn {
+  width: 50%;
 }
 
 @media only screen and (max-width:1024px) {

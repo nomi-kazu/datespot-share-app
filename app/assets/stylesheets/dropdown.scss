@@ -4,7 +4,7 @@
   position: relative;
 
   .dropdown_btn {
-    cursor: pointer;
+    display: block;
   }
 
   .dropdown_menu {
@@ -36,7 +36,7 @@
     position: relative;
     top: 3px;
     right: 16px;  
-    z-index: 16;
+    z-index: 6;
 
     .fa-stack {
       position: relative;
@@ -51,12 +51,12 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100; 
+    z-index: 4; 
   }
 
   .dropdown_btn.is-open + .dropdown_menu {
     display: block;
-    z-index: 101;
+    z-index: 5;
   }
 }
 
