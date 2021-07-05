@@ -1,6 +1,8 @@
+@import '_variables';
+
 .tag_list {
   margin-right: 20px;
-  color: lightslategray;
+  color: $link-color;
 
   &:hover {
     color: rgb(75, 75, 75);

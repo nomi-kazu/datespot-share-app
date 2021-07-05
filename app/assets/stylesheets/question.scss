@@ -1,3 +1,5 @@
+@import '_variables';
+
 .question_index_container {
   width: 80%;
   margin: 0 auto;
@@ -57,7 +59,7 @@
 }
 
 .question_link a {
-  color: lightslategray;
+  color: $link-color;
   float: right;
 }
 
