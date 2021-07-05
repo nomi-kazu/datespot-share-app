@@ -235,10 +235,14 @@
   margin-top: 20px;
 }
 
-.post_url_description {
-  font-size: 15px;
-  border-bottom: 1px solid lightgray;
-  margin-top: 20px;
+.post_url {
+  word-break: break-all;
+
+  .post_url_description {
+    font-size: 15px;
+    border-bottom: 1px solid lightgray;
+    margin-top: 20px;
+  }
 }
 
 .post_show_user {
@@ -395,8 +399,9 @@
           border-radius: 15px;
           padding: 10px;
           background: #fff;
-          color: black;
+          color: $main-color;
           font-size: 12px;
+          font-weight: bold;
         }
 
         a:hover {
