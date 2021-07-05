@@ -17,7 +17,8 @@
 
   .follow_btn
     - if user_signed_in?
-      = render 'relationships/follow_form', user: @user
+      - unless @user.id == current_user.id 
+        = render 'relationships/follow_form', user: @user
 
   .direct_message_btn
     - if user_signed_in?

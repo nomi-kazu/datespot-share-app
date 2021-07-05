@@ -5,11 +5,11 @@
     .field
       = f.label :username
       %br/
-      = f.email_field :username, class: 'form'
+      = f.email_field :username, autofocus: true, class: 'form'
     .field
       = f.label :email
       %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form'
+      = f.email_field :email, autocomplete: "email", class: 'form'
     .field
       = f.label :password
       - if @minimum_password_length

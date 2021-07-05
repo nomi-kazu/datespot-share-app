@@ -3,6 +3,7 @@
 .profile_username {
   font-size: 20px;
   font-weight: bold;
+  margin-bottom: 15px;
 }
 
 .profile_avatar {
@@ -20,6 +21,10 @@
 
   a {
     color: #fff;
+
+     &:hover {
+       color: #fff;
+     }
   }
 }
 
@@ -28,7 +33,7 @@
   width: 200px;
 
   a {
-    color: #fff!important;
+    color: #fff;
   }
 }
 
@@ -97,7 +102,7 @@
   }
 
   .profile_submit_btn {
-    width: 25%!important;
+    width: 25%;
   }
 
   .account_show_right {
@@ -111,12 +116,12 @@
   }
 
   .follow_btn {
-    width: 38%!important;
+    width: 38%;
     float: left;
   }
 
   .msg_btn {
-    width: 60%!important;
+    width: 60%;
     float: right;
     margin-top: 20px;
   }
