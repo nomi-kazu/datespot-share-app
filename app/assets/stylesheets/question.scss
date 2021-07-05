@@ -10,7 +10,7 @@
   .questions {
     text-decoration: none;
     margin-bottom: 25px;
-    background-color: #f4f4f4;
+    border: 1px solid lightslategray;
     border-radius: 10px;
     padding: 10px;
 
@@ -57,7 +57,7 @@
 }
 
 .question_link a {
-  color: lightgray;
+  color: lightslategray;
   float: right;
 }
 
