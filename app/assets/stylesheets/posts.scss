@@ -54,13 +54,15 @@
   margin: 20px 0;
 
   .content_right_link{
-    border: 1px solid #000;
+    border: 2px solid $main-color;
+    border-radius: 15px;
     background: #fff;
     padding: 10px;
 
     p {
-      color: black;
-      font-size: 13px;
+      color: $main-color;
+      font-size: 12px;
+      font-weight: bold;
       margin: auto 0;
     }
 
@@ -137,6 +139,10 @@
       float: left;
     }
 
+    .post_items {
+      font-size: 14px;
+    }
+
     .post_content_index {
       margin-bottom: 10px;
     }
@@ -206,7 +212,7 @@
   margin-bottom: 20px;
 
   a {
-    color: lightgray;
+    color: lightslategray;
     float: right;
     margin-top: 5px;
   }
@@ -233,6 +239,16 @@
   font-size: 15px;
   border-bottom: 1px solid lightgray;
   margin-top: 20px;
+}
+
+.post_show_user {
+  float: right;
+}
+
+.create_time {
+  color: lightslategrey;
+  float: right;
+  margin-top: 5px;
 }
 
 .comment_index {
@@ -360,7 +376,7 @@
   }
 
   .thumbnail {
-    min-height: 220px;
+    max-height: 220px;
   }
 
   .response_link_background {
@@ -375,11 +391,12 @@
         a {
           width: 140px;
           margin-top: 10px;
-          border: 1px solid #000;
-          border-radius: 0;
+          border: 2px solid $main-color;
+          border-radius: 15px;
           padding: 10px;
           background: #fff;
           color: black;
+          font-size: 12px;
         }
 
         a:hover {
