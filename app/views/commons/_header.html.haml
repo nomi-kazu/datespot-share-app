@@ -24,15 +24,15 @@
     .header_user_icon.dropdown
       - if user_signed_in?
         #dropdown_btn.dropdown_btn
-          = image_tag current_user.avatar_image
+          = image_tag current_user.avatar_image, id: 'dropdown_icon'
         .dropdown_menu
           %ul.dropdown_list
             %li.dropdown_item
               = link_to 'プロフィール', profile_path, data: {'turbolinks' => false}
             %li.dropdown_item
-              = link_to 'トーク一覧', rooms_path
-            %li.dropdown_item
               = link_to 'いいねした投稿', favorites_path
+            %li.dropdown_item
+              = link_to 'トーク一覧', rooms_path
             %li.dropdown_item
               - if unchecked_notifications.any?
                 .fa-stack
