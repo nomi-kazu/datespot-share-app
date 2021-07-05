@@ -54,7 +54,7 @@
   margin: 20px 0;
 
   .content_right_link{
-    border: 2px solid #000;
+    border: 1px solid #000;
     background: #fff;
     padding: 10px;
 
@@ -90,6 +90,10 @@
 .post_page_title {
   margin-top: 15px;
   font-weight: bold;
+}
+
+.search_btn:hover {
+  background-color: #f27985;
 }
 
 .post_container {
@@ -136,6 +140,7 @@
     width: 30px;
     border-radius: 100%;
     float: left;
+    object-fit: cover;
   }
 
   .post_username {
@@ -364,7 +369,7 @@
         a {
           width: 140px;
           margin-top: 10px;
-          border: 2px solid #000;
+          border: 1px solid #000;
           border-radius: 0;
           padding: 10px;
           background: #fff;

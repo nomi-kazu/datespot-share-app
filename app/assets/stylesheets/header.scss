@@ -34,6 +34,10 @@ header {
   width: 150px;
   float: left;
 
+  &:hover {
+    background-color: #f27985;
+  }
+
   a {
     line-height: 40px;
     text-align: center;
@@ -42,6 +46,11 @@ header {
     font-size: 15px;
     margin: 5px 20px;
     margin-top: -1px;
+
+    &:hover {
+      text-decoration: none;
+      color: #fff;
+    }
   }
 }
 
@@ -57,6 +66,7 @@ header {
   margin-top: -48px;
   padding: 3px;
   background-color: #fff;
+  object-fit: cover;
 }
 
 @media only screen and (max-width:767px) {
