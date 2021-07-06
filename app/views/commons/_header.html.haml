@@ -14,7 +14,7 @@
         .header_link 
           = link_to '新規投稿', new_post_path
         .header_link_response
-          = link_to '+', new_post_path, class: 'new_post_response_text'
+          = link_to '新規投稿', new_post_path, class: 'new_post_response_text'
     - else 
       .header_link.mr-3
         = link_to '新規登録', new_user_registration_path, class: 'new_post_response_text'

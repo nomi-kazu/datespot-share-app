@@ -9,5 +9,5 @@
       - @posts.each do |post|
         = render 'commons/posts', post: post
     - else
-      %p.mt-3 検索結果がありません
+      %p.mt-3 検索結果がありませんでした
     = paginate @posts
