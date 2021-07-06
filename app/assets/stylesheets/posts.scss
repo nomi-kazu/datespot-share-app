@@ -1,7 +1,7 @@
 @import '_variables';
 
 .container {
-  width: 99%;
+  width: 100%;
   margin-top: 30px;
 }
 
@@ -92,15 +92,22 @@
 .tag_wrap {
   margin-bottom: 30px;
 
-  a {
-    color: $link-color;
-    font-size: 14px;
+  .tag_list {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
 
-    &:hover {
-      color: rgb(75, 75, 75);
-      text-decoration: none;
+    a {
+      color: $link-color;
+      font-size: 14px;
+  
+      &:hover {
+        color: rgb(75, 75, 75);
+        text-decoration: none;
+      }
     }
   }
+
 }
 
 .tag_index_link {
@@ -312,15 +319,22 @@
 .comment_content {
   margin-top: -10px;
   float: left;
+  width: 95%;
 }
 
 .comment_delete {
   color: lightgray;
   float: right;
+  margin-top: -10px;
 }
 
-.tag_form {
-  padding-left: 10px;
+.post_new_container {
+  max-width: 90%;
+  margin: 0 auto;
+
+  .tag_form {
+    padding-left: 10px;
+  }
 }
 
 .post_btn {
