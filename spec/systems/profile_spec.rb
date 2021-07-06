@@ -11,7 +11,7 @@ RSpec.describe 'Profile', type: :system do
 
     it 'プロフィール画面に遷移' do
       visit root_path
-      find('.dropdown_btn').click
+      find('#dropdown_icon').click
       click_link 'プロフィール' 
       expect(page). to have_css('.your_post', text: 'あなたの投稿一覧')
     end
