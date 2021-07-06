@@ -9,6 +9,16 @@
             = question.title 
           .question_content 
             = question.content.truncate(100)
+        .user_info.question_index_user_info
+          - if user_signed_in?
+            - if question.user.id == current_user.id
+              = link_to profile_path, data: { 'turbolinks' => false } do
+                = image_tag qustion.user.avatar_image, class: 'post_user_avatar question_avatar'
+                %p.post_username.question_user_name= question.user.username
+            - else
+              = render 'commons/user_info', post:question
+          - else
+            = render 'commons/user_info', post: question
   - else
     %p.mt-3  質問がありません
     

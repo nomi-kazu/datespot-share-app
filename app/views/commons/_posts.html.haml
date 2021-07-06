@@ -4,8 +4,12 @@
       - if post.images&.attached?
         = image_tag post.images.first.variant(resize:"600x600^").processed, class: 'thumbnail'
     .post_container_right
-      .post_title
-        = post.title
+      - if user_signed_in?
+        .post_title
+          = post.title
+      - else
+        .post_title.sign_in_status_title
+          = post.title
 
     .post_container_right 
       .post_title 

@@ -47,6 +47,20 @@
   .question_content {
     margin-top: 20px;
   }
+
+  .question_index_userinfo {
+    margin-top: 10px;
+    margin-bottom: -10px;
+  }
+
+  .question_avatar {
+    height: 25px;
+    width: 25px;
+  }
+
+  .question_username {
+    font-size: 15px;
+  }
 }
 
 .answer_form {
@@ -61,6 +75,10 @@
 .question_link a {
   color: $link-color;
   float: right;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .question_new_container {

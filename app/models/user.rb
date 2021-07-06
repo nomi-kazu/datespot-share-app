@@ -39,7 +39,7 @@ class User < ApplicationRecord
 
   def avatar_image
     if profile&.avatar&.attached?
-      profile.avatar
+      profile.avatar.variant(resize: '300x300^')
     else
       'avatar.png'
     end
