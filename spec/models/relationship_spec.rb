@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe Relationship, type: :model do
   
   describe 'フォロー機能のテスト' do
-    let!(:user) { build(:user) }
-    let!(:other_user) { build(:user) }
+    let!(:user) { create(:user) }
+    let!(:other_user) { create(:user) }
 
     context 'フォローしていない場合' do
 
@@ -15,7 +15,7 @@ RSpec.describe Relationship, type: :model do
       end
 
       it 'フォロー解除に失敗する' do
-        expect(user.unfollow!(other_user)).to raise_error(ActiveRecord::RecordNotFound)
+        expect{ user.unfollow!(other_user) }.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
 
@@ -29,7 +29,7 @@ RSpec.describe Relationship, type: :model do
       end
 
       it 'フォローに失敗する' do
-        expect(user.follow!(other_user)).to raise_error(ActiveRecord::RecordInvalid)
+        expect{ user.follow!(other_user) }.to raise_error(ActiveRecord::RecordInvalid)
       end
     end
   end

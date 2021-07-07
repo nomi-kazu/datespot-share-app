@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'ログインとログアウト', typt: :system do
+RSpec.describe 'ログインとログアウト', type: :system do
   before do
     @user = User.create!(username: 'samplename', email: 'example@example.com', password: 'aaaaaa')
   end
@@ -11,7 +11,7 @@ RSpec.describe 'ログインとログアウト', typt: :system do
       fill_in 'user[email]', with: 'example@example.com'
       fill_in 'user[password]', with: 'aaaaaa'
       find('.login_btn').click 
-      expect(page). to have_css('.post_index_title', text: 'すべての投稿')
+      expect(page).to have_css('.post_index_title', text: 'すべての投稿')
     end
   end
 
@@ -25,7 +25,7 @@ RSpec.describe 'ログインとログアウト', typt: :system do
       find('#dropdown_icon').click
       click_on 'ログアウト' 
       page.driver.browser.switch_to.alert.accept
-      expect(page). to have_content('ログイン')
+      expect(page).to have_content('ログイン')
     end
   end
 end

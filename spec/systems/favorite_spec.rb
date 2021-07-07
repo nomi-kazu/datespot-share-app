@@ -13,7 +13,7 @@ RSpec.describe 'Favorite', type: :system do
       visit root_path
       find('#dropdown_icon').click
       click_link 'いいねした投稿' 
-      expect(page). to have_text('いいねした投稿')
+      expect(page).to have_text('いいねした投稿')
     end
   end
 end

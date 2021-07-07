@@ -11,7 +11,7 @@ RSpec.describe 'Comment', type: :system do
 
     it '投稿詳細画面に遷移しコメントできる' do
       visit post_path(post.id)
-      fill_in 'commet[content]', with: 'あいうえお'
+      fill_in 'comment[content]', with: 'あいうえお'
       click_on 'コメント'
       expect(page).to have_content('あいうえお')
     end

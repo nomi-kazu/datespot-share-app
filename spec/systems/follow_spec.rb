@@ -22,6 +22,7 @@ RSpec.describe 'Follow', type: :system do
     end
   
     context 'フォローしている場合' do
+      before { user.follow!(other_user) }
 
       it 'フォロー解除できる' do
         visit account_path(other_user)
