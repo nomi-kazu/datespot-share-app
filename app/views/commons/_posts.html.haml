@@ -15,12 +15,12 @@
         = render partial: 'likes/like', locals: {post: post}
       .clear
       .post_items
-        .post_prefecture 
+        .post_area
           = post.prefecture
-        - if post.area.present?
-          = '/' 
-          = post.area 
-        .post_content.box_read
+          - if post.area.present?
+            = '/' 
+            = post.area 
+        .post_content_index
           = post.content.truncate(110)
           
       .user_info

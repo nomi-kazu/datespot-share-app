@@ -7,14 +7,14 @@ RSpec.describe 'Question', type: :system do
   it '記事一覧が表示される' do
     visit questions_path
     questions.each do |question|
-      expect(page). to have_css('.question_title', text: question.title)
+      expect(page).to have_css('.question_title', text: question.title)
     end
   end
 
   it '詳細画面に遷移' do
     visit questions_path
     page.first('.question_title').click
-    expect(page). to have_css('.question_title')
+    expect(page).to have_css('.question_title')
   end
 
   describe 'ログインしている場合' do
@@ -25,8 +25,8 @@ RSpec.describe 'Question', type: :system do
     it '質問投稿画面へ遷移' do
       visit questions_path
       click_link '質問投稿'
-      expect(page). to have_content 'タイトル'
-      expect(page). to have_content '質問内容'
+      expect(page).to have_content 'タイトル'
+      expect(page).to have_content '質問内容'
     end
   
     it '投稿を保存できる' do
@@ -34,8 +34,8 @@ RSpec.describe 'Question', type: :system do
       fill_in 'question[title]', with: 'Faker::Lorem.characters(number: 10)'
       fill_in 'question[content]', with: 'Faker::Lorem.characters(number: 30)'
       find('.question_submit').click
-      expect(page). to have_content '投稿できました!'
-      expect(page). to have_content '質問部屋'
+      expect(page).to have_content '投稿できました!'
+      expect(page).to have_content '質問部屋'
     end
 
   end

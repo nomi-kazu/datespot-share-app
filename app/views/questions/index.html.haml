@@ -1,10 +1,10 @@
 .question_index_container 
   %p.questions_index_title.font-weight-bold 質問部屋
 
-  - if @qustions.present?
+  - if @questions.present?
     - @questions.each do |question|
       .questions 
-        = link_to question_path(id: question.id) do 
+        = link_to question_path(id: question.id) do
           .question_title
             = question.title 
           .question_content 
@@ -13,7 +13,7 @@
           - if user_signed_in?
             - if question.user.id == current_user.id
               = link_to profile_path, data: { 'turbolinks' => false } do
-                = image_tag qustion.user.avatar_image, class: 'post_user_avatar question_avatar'
+                = image_tag question.user.avatar_image, class: 'post_user_avatar question_avatar'
                 %p.post_username.question_user_name= question.user.username
             - else
               = render 'commons/user_info', post: question

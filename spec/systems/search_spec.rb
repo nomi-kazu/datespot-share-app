@@ -5,6 +5,6 @@ RSpec.describe 'Search form', type: :system do
     visit root_path
     fill_in 'search', with: '渋谷'
     click_on '検索' 
-    expect(page). to have_content '「 渋谷 」の検索結果'
+    expect(page).to have_content '「 渋谷 」の検索結果'
   end
 end
