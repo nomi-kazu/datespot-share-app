@@ -39,6 +39,7 @@ gem 'rails-i18n'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'sqlite3', group: :development
 gem 'pg', '>= 0.18', '< 2.0', group: :production
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -47,7 +48,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'faker'
   gem 'factory_bot_rails'
-  gem 'dotenv-rails'
 end
 
 group :development do
