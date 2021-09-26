@@ -37,6 +37,8 @@ gem 'rails-i18n'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'sqlite3', group: :development
+gem 'pg', '>= 0.18', '< 2.0', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
