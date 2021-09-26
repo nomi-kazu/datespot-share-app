@@ -21,7 +21,7 @@
       .post_title.sign_in_status_title
         = @post.title
 
-    %div{:id => "likes_buttons_#{@post.id}"}
+    %div{:id => "likes_buttons_#{@post.id}", class: 'clear post_heart'}
       = render partial: 'likes/like', locals: {post: @post}
     - if current_user == @user 
       .link_container.clear
